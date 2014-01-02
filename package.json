@@ -1,0 +1,15 @@
+{
+  "name": "Scratch'n Sniff",
+  "description": "A simple combination of the Cheerio and Request libraries to make a nodejs scraper that doesn't have the same memory leak issues as node-scraper, which uses jsdom.",
+  "author": {
+    "name": "Michael Keller",
+    "email": "michael.keller@gmail.com",
+    "url": "mhkeller.com"
+  },
+  "version": "0.1.0",
+  "dependencies": {
+    "request": "~0.12.4",
+    "cheerio": "~2.27.0"
+  },
+  "engine": "node >= 0.8.0"
+}
