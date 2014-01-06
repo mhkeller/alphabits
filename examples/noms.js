@@ -10,11 +10,6 @@ var scrape = Scraper()
 									.extractor(parsePage, function(d) { return d } )
 									.rateLimit(1000);
 
-// When all done
-scrape.done(function(results){
-	console.log(results)
-})
-
 function parsePage($, year, cb){
 	var info = {};
 	info[year] = { imdbid: [], titles: []	};
@@ -33,3 +28,8 @@ function parsePage($, year, cb){
 
 }
 
+
+// When all done
+scrape.done(function(results){
+	console.log(results)
+})
