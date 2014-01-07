@@ -36,11 +36,11 @@ function parsePage($, year, callback, status){
 
 
 // When all done
-// scrape.done(function(results){
-// 	console.log(results)
-// })
+scrape.done(function(results){
+	console.log('done')
+})
 
 // Or on every incremental page
 scrape.each(function(results){
-	console.log(results)
+	console.log('each')
 })
