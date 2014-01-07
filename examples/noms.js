@@ -38,5 +38,5 @@ function parsePage($, year, callback, status){
 
 // When all done
 scrape.done(function(results){
-	console.log('done')
+	console.log(results)
 })
