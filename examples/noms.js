@@ -39,8 +39,3 @@ function parsePage($, year, callback, status){
 scrape.done(function(results){
 	console.log('done')
 })
-
-// Or on every incremental page
-scrape.each(function(results){
-	console.log('each')
-})
