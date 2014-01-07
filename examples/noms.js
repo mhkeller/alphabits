@@ -8,28 +8,39 @@ var scrape = Scraper()
 									.data(years)
 									.url('http://www.imdb.com/event/ev0000003/', function(d) { return d })
 									.extractor(parsePage, function(d) { return d } )
-									.rateLimit(1000);
+									.rateLimit(1000)
+									.format('csv'); // Defaults to json
 
-function parsePage($, year, cb){
-	var info = {};
-	info[year] = { imdbid: [], titles: []	};
+function parsePage($, year, callback, status){
+	console.log(status) // Print which page we're fetching
+
+	var movies   = []; // This scraper is getting multiple objects per page. You could also give the callback an object and it will still produce a csv
 	
 	$('[class^=alt] strong').each(function(index, el){
+		var movie = {};
+
 		var id    = $(el).find('a').attr('href').split('/')[2].replace('tt',''),
 				title = $(el).find('a').html().replace('&#xE9;', 'é').replace('&#x27;' , '\'').replace('&#x26;', '&');
 
-		info[year].imdbid.push(id);
-		info[year].titles.push(title);
+		// Only include movies we haven't already encountered on this page
+		if (_.chain(movies).map(function(m){ return _.values(m)}).flatten().value().indexOf(id) == -1){
+			movie.year   = year;
+			movie.imdbid = id;
+			movie.title  = title;
+			movies.push(movie);
+		}
 	})
 
-	info[year].imdbid = _.uniq(info[year].imdbid)
-	info[year].titles = _.uniq(info[year].titles)
-	cb(info)
-
+	callback(movies)
 }
 
 
 // When all done
-scrape.done(function(results){
+// scrape.done(function(results){
+// 	console.log(results)
+// })
+
+// Or on every incremental page
+scrape.each(function(results){
 	console.log(results)
 })
