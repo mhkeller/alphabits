@@ -11,6 +11,7 @@ var scrape = Scraper()
 									.rateLimit(1000)
 									.format('csv'); // Defaults to json
 
+
 function parsePage($, year, callback, status){
 	console.log(status) // Print which page we're fetching
 
