@@ -1,5 +1,5 @@
 {
-  "name": "Alphabits",
+  "name": "alphabits",
   "description": "A scraper experiment. A combination of the Cheerio and Request libraries to make a nodejs scraper that doesn't have the same memory leak issues as node-scraper, which uses jsdom.",
   "author": {
     "name": "Michael Keller",
