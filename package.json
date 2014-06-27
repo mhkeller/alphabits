@@ -1,6 +1,6 @@
 {
-  "name": "Scratch'n Sniff",
-  "description": "A mostly useless scraper experiment. A combination of the Cheerio and Request libraries to make a nodejs scraper that doesn't have the same memory leak issues as node-scraper, which uses jsdom.",
+  "name": "Alphabits",
+  "description": "A scraper experiment. A combination of the Cheerio and Request libraries to make a nodejs scraper that doesn't have the same memory leak issues as node-scraper, which uses jsdom.",
   "author": {
     "name": "Michael Keller",
     "email": "michael.keller@gmail.com",

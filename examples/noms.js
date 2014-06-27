@@ -1,5 +1,4 @@
-var fs        = require('fs'),
-		Scraper   = require('../lib/scratch-n-sniff.js'),
+var Scraper   = require('../lib/index.js'),
 		_         = require('underscore');
 
 var years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013];
@@ -7,10 +6,10 @@ var years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2
 // TODO find a balance between chained method calls and feeding params to a single function
 var scrape = Scraper()
 									.data(years)
-									.url('http://www.imdb.com/event/ev0000003/', function(d) { return d })
-									.extractor(parsePage, function(d) { return d } )
-									.rateLimit(1000)
-									.format('csv') // Defaults to json
+									.url('http://www.imdb.com/event/ev0000003/', function(d) { return d }) // The second argument is a function that takes the current node in your data and returns a value. If your data is an object then it would be `return d.year`.
+									.extractor(parsePage)
+									.rateLimit(1000) // Optional
+									.format('csv') // Optional, defaults to json if not called
 									.start(onDone);
 
 
