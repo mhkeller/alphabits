@@ -1,6 +1,6 @@
 {
   "name": "alphabits",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A scraper experiment. A combination of the Cheerio and Request libraries to make a nodejs scraper that doesn't have the same memory leak issues as node-scraper, which uses jsdom.",
   "main": "lib/index.js",
   "directories": {
@@ -15,13 +15,19 @@
   },
   "keywords": [
     "scraping",
-    "cheerio",
-    "scraper"
+    "web",
+    "scraping"
   ],
   "author": "Michael Keller",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mhkeller/alphabits/issues"
   },
-  "homepage": "https://github.com/mhkeller/alphabits"
+  "homepage": "https://github.com/mhkeller/alphabits",
+  "dependencies": {
+    "request": "~2.36.0",
+    "cheerio": "~0.17.0",
+    "dsv": "0.0.3",
+    "underscore": "~1.6.0"
+  }
 }
