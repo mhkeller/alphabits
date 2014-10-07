@@ -7,3 +7,8 @@ Can output `json` (default) or `csv` if json is properly formatted, i.e. one dim
 It generally assumes that you are scraping a series of webpages whose urls vary by a different parameter. 
 
 See the example for an example setup. Better documentation to come.
+
+
+TODO
+
+Write documentation for showing how to use this for getting data from json endpoint.

@@ -9,7 +9,8 @@ var scrape = Scraper()
 									.url('http://www.imdb.com/event/ev0000003/', function(d) { return d }) // The second argument is a function that takes the current node in your data and returns a value. If your data is an object then it would be `return d.year`.
 									.extractor(parsePage)
 									.rateLimit(1000) // Optional
-									.format('csv') // Optional, defaults to json if not called
+									.scrapeTargetFormat('webpage') // Can be `webpage` or `json`
+									.resultFormat('csv') // Optional, defaults to json if not called
 									.start(onDone);
 
 
