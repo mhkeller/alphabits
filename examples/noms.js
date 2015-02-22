@@ -5,13 +5,13 @@ var years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2
 
 // TODO find a balance between chained method calls and feeding params to a single function
 var scrape = Scraper()
-									.data(years)
-									.url('http://www.imdb.com/event/ev0000003/', function(d) { return d }) // The second argument is a function that takes the current node in your data and returns a value. If your data is an object then it would be `return d.year`.
-									.extractor(parsePage)
-									.rateLimit(1000) // Optional
-									.scrapeTargetFormat('webpage') // Can be `webpage` or `json`
-									.resultFormat('csv') // Optional, defaults to json if not called
-									.start(onDone);
+	.data(years)
+	.url('http://www.imdb.com/event/ev0000003/', function(d) { return d }) // The second argument is a function that takes the current node in your data and returns a value. If your data is an object then it would be `return d.year`.
+	.extractor(parsePage)
+	.rateLimit(1000) // Optional
+	.scrapeTargetFormat('webpage') // Can be `webpage` or `json`
+	.resultFormat('csv') // Optional, defaults to json if not called
+	.start(onDone);
 
 
 function parsePage($, year, callback, status){
