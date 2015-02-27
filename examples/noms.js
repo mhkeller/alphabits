@@ -11,6 +11,7 @@ var scrape = Scraper()
 									.rateLimit(1000) // Optional
 									.scrapeTargetFormat('webpage') // Can be `webpage` or `json`
 									.resultFormat('csv') // Optional, defaults to json if not called
+									.headers({ 'user-agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11' }) // Optional, set user-agent headers
 									.start(onDone);
 
 
