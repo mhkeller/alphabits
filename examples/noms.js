@@ -32,7 +32,7 @@ function parsePage($, year, callback, status){
 
 			movies[id] = movie;
 		}
-	})
+	});
 
 	callback(_.values(movies))
 }
