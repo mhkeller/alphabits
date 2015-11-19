@@ -13,6 +13,7 @@ var scrape = Scraper()
 							.headers({ 'user-agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11' }) // Optional, set user-agent headers
 							.start(onDone);
 
+// The extractor method gets passed a function with the callback signature of jQuery, the return value from the `url` method, the callback to save results to, and `status`, which prints what page we're on
 function parsePage($, year, callback, status){
 	console.log(status) // Print which page we're fetching
 
@@ -34,6 +35,7 @@ function parsePage($, year, callback, status){
 		}
 	});
 
+	// The extracted text or json is saved by sending it through the callback
 	callback(_.values(movies))
 }
 
