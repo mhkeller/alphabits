@@ -22,8 +22,8 @@ function parsePage($, year, callback, status){
   $('[class^=alt] strong').each(function(index, el){
      var movie = {};
 
-     var id    = $(el).find('a').attr('href').split('/')[2].replace('tt',''),
-     title = $(el).find('a').html().replace('&#xE9;', 'é').replace('&#x27;' , '\'').replace('&#x26;', '&');
+     var id    = $(el).find('a').attr('href').split('/')[2].replace('tt','');
+     var title = $(el).find('a').html().replace('&#xE9;', 'é').replace('&#x27;' , '\'').replace('&#x26;', '&');
 
      // Only include movies we haven't already encountered on this page
      if (!movie[id]){
