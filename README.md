@@ -5,7 +5,7 @@ Scrape a number of pages asynchronously and write out your data in one file when
 
 Can output `json` (default) or `csv` if json is properly formatted, i.e. one dimensional.
 
-See the example for an example setup. Better documentation to come.
+See the [example usage](https://github.com/mhkeller/alphabits/blob/master/examples/noms.js) and an explanation of different options.
 
 
 ## Genesis
